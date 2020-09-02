@@ -1,24 +1,31 @@
-import {expect, test} from '@oclif/test'
+import { expect, test } from '@oclif/test';
 
-describe.skip('zip', () => {
-  test
+describe('zip', () => {
+ test
   .stdout()
-  .command(['zip', '--dryRun'])
-  .it('runs zip --dryRun', ctx => {
-    expect(ctx.stdout).to.contain('Writing')
-  })
+  .command(['zip', '--dryRun', '--noValidate'])
+  .it('runs zip --dryRun', (ctx) => {
+   expect(ctx.stdout).to.contain('Simulation mode');
+  });
 
-  test
+ test
   .stdout()
-  .command(['zip', '--name', 'test-file', '--dryRun'])
-  .it('runs zip --name test-file --dryRun', ctx => {
-    expect(ctx.stdout).to.contain('Writing')
-  })
+  .command(['zip', '--force', '--dryRun'])
+  .it('runs zip --name test-file --dryRun', (ctx) => {
+   expect(ctx.stdout).to.contain('Forced update enabled');
+  });
 
-  test
+ test
   .stdout()
-  .command(['zip', '--name', 'test-file', '--dryRun'])
-  .it('runs zip --name test-file --dryRun', ctx => {
-    expect(ctx.stdout).to.contain('Rewriting')
-  })
-})
+  .command(['zip', '--dryRun', '--noValidate'])
+  .it('runs zip --dryRun to generate .releases directory', (ctx) => {
+   expect(ctx.stdout).to.contain('Generating .releases directory');
+  });
+
+ test
+  .stdout()
+  .command(['zip', '--name', 'test-file', '--dryRun', '--noValidate'])
+  .it('runs zip --name test-file --dryRun --noValidate', (ctx) => {
+   expect(ctx.stdout).to.contain('test-file.zip');
+  });
+});
