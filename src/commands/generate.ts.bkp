@@ -1,0 +1,23 @@
+import {Command, flags} from '@oclif/command'
+
+export default class Generate extends Command {
+  static description = 'ACCT scaffold command'
+  
+  static flags = {
+    help: flags.help({char: 'h'}),
+    name: flags.string({char: 'n', description: 'file name'}),
+    force: flags.boolean({char: 'f', description: 'Force rewriting existing file with same name'}),
+    interactive: flags.boolean({char: 'i', description: 'Interactive mode'})
+  }
+  
+  static args = [{name: 'what'}]
+  
+  async run() {
+    const {args} = this.parse(Generate)
+    
+    switch(args.what) {
+      default:
+       this.log('Invalid argument. Use -h to get available options.')
+    }
+  }
+}
