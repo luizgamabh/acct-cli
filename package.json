@@ -11,7 +11,8 @@
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^3",
-    "tslib": "^1"
+    "tslib": "^1",
+    "child_process": "^1"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1",
@@ -28,7 +29,25 @@
     "nyc": "^14",
     "rimraf": "^3.0.2",
     "ts-node": "^8",
-    "typescript": "^3.3"
+    "typescript": "^3.3",
+    "prettier": "2.1.1",
+    "eslint-config-prettier": "6.11.0",
+    "husky": "4.2.5"
+  },
+  "scripts": {
+    "postpack": "rimraf oclif.manifest.json",
+    "posttest": "eslint . --ext .ts --config .eslintrc",
+    "prepack": "rimraf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "/src/**/*": "prettier --write --ignore-unknown"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -53,12 +72,5 @@
     ]
   },
   "repository": "luizgamabh/acct-cli",
-  "scripts": {
-    "postpack": "rimraf oclif.manifest.json",
-    "posttest": "eslint . --ext .ts --config .eslintrc",
-    "prepack": "rimraf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
-    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
-    "version": "oclif-dev readme && git add README.md"
-  },
   "types": "lib/index.d.ts"
 }
