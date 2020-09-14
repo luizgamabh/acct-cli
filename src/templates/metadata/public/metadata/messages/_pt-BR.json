@@ -1,0 +1,15 @@
+{
+  "name": "CRM Dito",
+  "headline": "O app Dito-CRM coleta informações do usuário e as transforma em métricas para que sejam tomadas as decisões corretas.",
+  "overview": "O app Dito-CRM coleta informações do usuário e as transforma em métricas para que sejam tomadas as decisões corretas.",
+  "features": [
+    "Trackeamento dos eventos nativos VTEX IO",
+    "Identificação do comprador: cadastrado e não cadastrado",
+    "Fluxos: Acessou a home, buscou produto, acessou departamento, acessou categoria, acessou produto, adicionou produto ao carrinho, fez pedido, fez pedido produto"
+  ],
+  "additionalInformation": "Confira a [documentação do app](https://vtex.io/docs/app/acupula.ditocrm) para instruções detalhadas de instalação. Visite o site oficial [Dito](https://www.dito.com.br/) para maiores informações.",
+  "websiteURL": "https://vtex.io/docs/app/acupula.ditocrm",
+  "support": {
+    "url": "https://support.vtex.com/hc/requests"
+  }
+}

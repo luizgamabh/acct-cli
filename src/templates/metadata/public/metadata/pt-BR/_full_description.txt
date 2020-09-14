@@ -1,0 +1,27 @@
+## Sobre
+
+O app Dito-CRM coleta informações do usuário e as transforma em métricas para que sejam tomadas as decisões corretas.
+
+## Funcionalidades
+
+- **Trackeamento dos eventos nativos VTEX IO**
+
+- **Identificação do comprador**:
+
+1. Cadastrado
+2. Não cadastrado
+
+- **Fluxos**:
+
+1. Acessou home
+2. Buscou produto
+3. Acessou departamento
+4. Acessou categoria
+5. Acessou produto
+6. Adicionou produto ao carrinho
+7. Fez pedido
+8. Fez pedido produto
+
+## Como configurar
+
+Confira a [documentação do app](https://vtex.io/docs/app/acupula.ditocrm) para instruções detalhadas de instalação. Visite o site oficial [Dito](https://www.dito.com.br/) para maiores informações.

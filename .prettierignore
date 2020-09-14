@@ -6,4 +6,4 @@ bin
 .nyc_output
 .idea
 .git
-
+/src/templates
