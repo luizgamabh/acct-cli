@@ -1,1 +1,1 @@
-La aplicación Dito-CRM recopila información del usuario y la convierte en métricas para que pueda tomar las decisiones correctas.
+{{shortDescriptionEnUs}}

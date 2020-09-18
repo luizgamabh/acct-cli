@@ -1,12 +1,12 @@
 {
-  "name": "{{projectTitle}}",
-  "headline": "{{shortDescriptionEnUs}}",
-  "overview": "{{fullDescriptionEnUs}}",
+  "name": "{{projectTitleAsJson}}",
+  "headline": "{{shortDescriptionEnUsAsJson}}",
+  "overview": "{{fullDescriptionEnUsAsJson}}",
   "features": [
-    {{featuresEnUsAsArray}}
+    {{featuresEnUsAsJson}}
   ],
-  "additionalInformation": "Please head over to the [official docs](https://vtex.io/docs/app/acupula.ditocrm) to see advanced setup instructions. Please visit [official dito's website](https://www.dito.com.br/) for CRM documenation.",
-  "websiteURL": "https://vtex.io/docs/app/acupula.ditocrm",
+  "additionalInformation": "Please head over to the [official docs](https://vtex.io/docs/app/{{appVTexStore}}) to see advanced setup instructions.",
+  "websiteURL": "https://vtex.io/docs/app/{{appVTexStore}}",
   "support": {
     "url": "https://support.vtex.com/hc/requests"
   }

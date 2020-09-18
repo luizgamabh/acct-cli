@@ -5,11 +5,12 @@ import { FlagsInterface } from '../../interfaces/flags.interface';
 import * as chalk from 'chalk';
 import { promisify } from 'util';
 import * as inquirer from 'inquirer';
+import notification from '../../utils/notification';
 
 const copy = promisify(copyCb);
 
 const metadata = (command: Command) => async (flags: FlagsInterface) => {
-  const { name, dryRun } = flags;
+  const { dryRun } = flags;
 
   if (dryRun) {
     command.log(
@@ -17,7 +18,7 @@ const metadata = (command: Command) => async (flags: FlagsInterface) => {
     );
   }
 
-  const vars = await inquirer.prompt([
+  const replacements = await inquirer.prompt([
     {
       name: 'projectTitle',
       type: 'input',
@@ -49,26 +50,38 @@ const metadata = (command: Command) => async (flags: FlagsInterface) => {
     },
   ]);
 
-  // FIXME: Quebrar em linhas
-  vars.featuresEnUsAsArray = vars.featuresEnUs;
+  replacements.projectTitleAsJson = replacements.projectTitle.replace(
+    /[\r\n\f]+/gm,
+    ' '
+  );
+
+  replacements.shortDescriptionEnUsAsJson = replacements.shortDescriptionEnUs.replace(
+    /[\r\n\f]+/gm,
+    ' '
+  );
+
+  replacements.fullDescriptionEnUsAsJson = replacements.fullDescriptionEnUs.replace(
+    /[\r\n\f]+/gm,
+    ' '
+  );
+
+  replacements.featuresEnUsAsJson = `"${replacements.featuresEnUs
+    .replace(/^(\s*-\s*|\s*$[\r\n\f\s\t])/gm, '')
+    .split(/[\r\n]+/m)
+    .filter((line: string) => Boolean(line.trim()))
+    .join(
+      `",
+    "`
+    )}"`;
 
   const inDir = join(__dirname, '../../templates/metadata');
-
   const outDir = process.cwd();
-
-  command.log(inDir, outDir);
-
-  // command.log(prompt);
-
-  command.log(name);
-
-  await copy(inDir, outDir, vars)
-    .then((response: any) => {
-      command.log(chalk.greenBright('Response'));
-      command.log(response);
+  await copy(inDir, outDir, replacements)
+    .then(() => {
+      command.log(notification.success('Files generated'));
     })
     .catch((error: any) => {
-      command.log(chalk.redBright('Error'));
+      command.log(notification.error('Could not generate files'));
       command.log(error);
     });
 

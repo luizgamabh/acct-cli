@@ -1,4 +1,3 @@
 {
-  "extends": ["oclif", "oclif-typescript", "prettier"],
-  "ignorePatterns": ["/src/template/**/*.{json,ts,js}"]
+  "extends": ["oclif", "oclif-typescript", "prettier"]
 }

@@ -1,27 +1,11 @@
 ## Acerca de
 
-La aplicación Dito-CRM recopila información del usuario y la convierte en métricas para que pueda tomar las decisiones correctas.
+{{fullDescriptionEnUs}}
 
 ## Características
 
-- **Seguimiento de eventos nativos de VTEX IO**
-
-- **Identificación del comprador**:
-
-1. Registrado
-2. No registrado
-
-- **Fluxos**:
-
-1. Acceso a home
-2. Buscó producto
-3. Departamento accedido
-4. Categoría accedida
-5. Producto accedido
-6. Producto añadido al carrito
-7. Hecho pedido
-8. Producto pedido
+{{featuresEnUs}}
 
 ## Configuración
 
-Consulte la [documentación de la aplicación](https://vtex.io/docs/app/acupula.ditocrm) y más detalles sobre las funciones en el [sitio web oficial Dito](https://www.dito.com.br/).
+Consulte la [documentación de la aplicación](https://vtex.io/docs/app/{{appVTexStore}}) para más detalles.
