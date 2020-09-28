@@ -1,5 +1,5 @@
 import { Command, flags } from '@oclif/command';
-import dotfiles from '@acct/handlers/generate/dotfiles';
+import dotfiles from '../../handlers/generate/dotfiles';
 
 export default class DotFiles extends Command {
   static description = 'Generate project dotfiles.';

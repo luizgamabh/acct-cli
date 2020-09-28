@@ -1,16 +1,16 @@
 # STANDARD TERMS AND CONDITIONS OF LICENSE TO USE APPLICATION
 
-By these terms and conditions, the “User” hereby declares the understanding and acceptance of the rights and obligations provided by this Standard Terms and Conditions of the {{projectTitle}} software.
+By these terms and conditions, the “User” hereby declares the understanding and acceptance of the rights and obligations provided by this Standard Terms and Conditions of the {{{es.projectTitle}}} software.
 
-1. This Agreement creates a binding contract between USER and ACCT, through which ACCT grants to USER a non transferable and personal license of use of the ACCT´s {{projectTitle}} software. USER declares that has read and agrees to all the terms contained in this Agreement before downloading the application.
+1. This Agreement creates a binding contract between USER and ACCT, through which ACCT grants to USER a non transferable and personal license of use of the ACCT´s {{{es.projectTitle}}} software. USER declares that has read and agrees to all the terms contained in this Agreement before downloading the application.
 
    1.1 USER declares to be aware that the application was developed to operate in the VTEX platform.
 
    1.2 ACCT is not liable to any inability to use or failure of performance of the application if operated in systems not recommended above.
 
-2. USER shall use the {{projectTitle}} exclusively in the scope of the license granted, which can be terminated at any time by ACCT if there are any violations to the terms of this Agreement.
+2. USER shall use the {{{es.projectTitle}}} exclusively in the scope of the license granted, which can be terminated at any time by ACCT if there are any violations to the terms of this Agreement.
 
-3. The license of use the application is limited to the processing of USER’S data. USER is exclusively responsible for all data and information processed or generated within the application. ACCT is not responsible or liable to any data and information provided through the application by USER and shall not be liable for any damages arising out of or related to the information provided through {{projectTitle}}.
+3. The license of use the application is limited to the processing of USER’S data. USER is exclusively responsible for all data and information processed or generated within the application. ACCT is not responsible or liable to any data and information provided through the application by USER and shall not be liable for any damages arising out of or related to the information provided through {{{es.projectTitle}}}.
 
 4. The license within this Agreement is exclusive to USER, who may not transfer, sublicense or in any way redistribute the rights to use provided in this Agreement. USER may, at all times by express consent of ACCT, change the number of products or acquire new licenses of use by signing the form incorporated to this Agreement.
 

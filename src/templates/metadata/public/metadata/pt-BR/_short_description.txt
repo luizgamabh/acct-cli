@@ -1,1 +1,1 @@
-{{shortDescriptionEnUs}}
+{{{pt.shortDescription}}}

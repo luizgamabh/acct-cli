@@ -1,15 +1,13 @@
 import { Command } from '@oclif/command';
 import { join } from 'path';
-import { promisify } from 'util';
-import * as copyCb from 'copy-template-dir';
 import * as chalk from 'chalk';
 import * as ora from 'ora';
-import { FlagsInterface } from '@acct/interfaces/flags.interface';
-import { notification } from '@acct/utils/notification';
 
-const copy = promisify(copyCb);
+import { notification } from '../../../utils/notification';
+import { FlagsInterface } from '../../../interfaces/flags.interface';
+import scaffold from '../../../utils/scaffold';
 
-export const dotfiles = (command: Command) => async (flags: FlagsInterface) => {
+const dotfiles = (command: Command) => async (flags: FlagsInterface) => {
   const { dryRun } = flags;
 
   if (dryRun) {
@@ -20,9 +18,9 @@ export const dotfiles = (command: Command) => async (flags: FlagsInterface) => {
 
   const spinner = ora('Generating files').start();
 
-  const inDir = join(__dirname, '../../templates/dotfiles');
+  const inDir = join(__dirname, '../../../templates/dotfiles');
   const outDir = process.cwd();
-  await copy(inDir, outDir)
+  await scaffold(inDir, outDir)
     .then(() => {
       spinner.succeed('Success');
       spinner.stop();
@@ -34,3 +32,5 @@ export const dotfiles = (command: Command) => async (flags: FlagsInterface) => {
 
   command.exit();
 };
+
+export default dotfiles;

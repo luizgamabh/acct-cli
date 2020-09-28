@@ -1,5 +1,5 @@
-import { AvailableLanguages } from '@acct/interfaces/available-languages.type';
-import { MetadataReplacementKeys } from '@acct/handlers/generate/metadata/interfaces/metadata-replacement-keys.interface';
+import { MetadataReplacementKeys } from './metadata-replacement-keys.interface';
+import { AvailableLanguages } from '../../../../interfaces/available-languages.type';
 
 export type MetadataReplacements = Record<
   AvailableLanguages,

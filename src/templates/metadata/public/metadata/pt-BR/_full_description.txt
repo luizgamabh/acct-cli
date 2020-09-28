@@ -1,11 +1,11 @@
 ## Sobre
 
-{{fullDescriptionEnUs}}
+{{{pt.fullDescription}}}
 
 ## Funcionalidades
 
-{{featuresEnUs}}
+{{{pt.features}}}
 
 ## Como configurar
 
-Consulte a [documentação da aplicação](https://vtex.io/docs/app/{{appVTexStore}}) para maiores detalhes.
+Consulte a [documentação da aplicação](https://vtex.io/docs/app/{{{pt.appVTexStore}}}) para maiores detalhes.

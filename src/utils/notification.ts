@@ -1,5 +1,6 @@
 import * as chalk from 'chalk';
-import { NotificationColorEnum } from '@acct/enums/notification-color.enum';
+
+import { NotificationColorEnum } from '../enums/notification-color.enum';
 
 const _notify = (
   message: string | null,

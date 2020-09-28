@@ -1,8 +1,9 @@
 import * as shell from 'shelljs';
 import * as path from 'path';
 import * as chalk from 'chalk';
-import { FlagsInterface } from '@acct/interfaces/flags.interface';
 import Command from '@oclif/command';
+
+import { FlagsInterface } from '../../interfaces/flags.interface';
 
 const zip = (command: Command) => async (flags: FlagsInterface) => {
   const { name, force, dryRun, noValidate } = flags || {};

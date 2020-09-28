@@ -1,14 +1,12 @@
 import { Command } from '@oclif/command';
 import { join } from 'path';
-import { promisify } from 'util';
-import * as copyCb from 'copy-template-dir';
 import * as chalk from 'chalk';
 import * as ora from 'ora';
-import { notification } from '@acct/utils/notification';
-import { FlagsInterface } from '@acct/interfaces/flags.interface';
-import { getReplacements } from './parsers/replacements';
 
-const copy = promisify(copyCb);
+import { notification } from '../../../utils/notification';
+import { FlagsInterface } from '../../../interfaces/flags.interface';
+import { getReplacements } from './parsers/replacements';
+import scaffold from '../../../utils/scaffold';
 
 export const metadata = (command: Command) => async (flags: FlagsInterface) => {
   const { dryRun } = flags;
@@ -19,15 +17,15 @@ export const metadata = (command: Command) => async (flags: FlagsInterface) => {
     );
   }
 
-  const spinner = ora('Generating files').start();
-
   const replacements = await getReplacements();
 
-  const inDir = join(__dirname, '../../templates/metadata');
+  const spinner = ora('Generating files').start();
+
+  const inDir = join(__dirname, '../../../templates/metadata');
   const outDir = process.cwd();
-  await copy(inDir, outDir, replacements)
+  await scaffold(inDir, outDir, replacements)
     .then(() => {
-      spinner.succeed('Success');
+      spinner.succeed('Files generated with success');
       spinner.stop();
     })
     .catch((error: any) => {

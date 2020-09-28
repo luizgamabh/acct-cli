@@ -1,1 +1,1 @@
-{{projectTitle}}
+{{{pt.projectTitle}}}

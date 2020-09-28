@@ -1,12 +1,12 @@
 {
-  "name": "{{projectTitleAsJson}}",
-  "headline": "{{shortDescriptionEnUsAsJson}}",
-  "overview": "{{fullDescriptionEnUsAsJson}}",
+  "name": "{{{es.projectTitleAsJson}}}",
+  "headline": "{{{es.shortDescriptionAsJson}}}",
+  "overview": "{{{es.fullDescriptionAsJson}}}",
   "features": [
-    {{featuresEnUsAsJson}}
+    {{{es.featuresAsJson}}}
   ],
-  "additionalInformation": "Consulte la [documentación de la aplicación](https://vtex.io/docs/app/{{appVTexStore}}).",
-  "websiteURL": "https://vtex.io/docs/app/{{appVTexStore}}",
+  "additionalInformation": "Consulte la [documestación de la aplicación](https://vtex.io/docs/app/{{{es.appVTexStore}}}).",
+  "websiteURL": "https://vtex.io/docs/app/{{{es.appVTexStore}}}",
   "support": {
     "url": "https://support.vtex.com/hc/requests"
   }

@@ -1,5 +1,5 @@
 import { Command, flags } from '@oclif/command';
-import metadata from '@acct/handlers/generate/metadata';
+import metadata from '../../handlers/generate/metadata';
 
 export default class Metadata extends Command {
   static description = 'Generate VTEX Store metadata. (interactive)';

@@ -1,12 +1,12 @@
 {
-  "name": "{{projectTitleAsJson}}",
-  "headline": "{{shortDescriptionEnUsAsJson}}",
-  "overview": "{{fullDescriptionEnUsAsJson}}",
+  "name": "{{{en.projectTitleAsJson}}}",
+  "headline": "{{{en.shortDescriptionAsJson}}}",
+  "overview": "{{{en.fullDescriptionAsJson}}}",
   "features": [
-    {{featuresEnUsAsJson}}
+    {{{en.featuresAsJson}}}
   ],
-  "additionalInformation": "Please head over to the [official docs](https://vtex.io/docs/app/{{appVTexStore}}) to see advanced setup instructions.",
-  "websiteURL": "https://vtex.io/docs/app/{{appVTexStore}}",
+  "additionalInformation": "Please head over to the [official docs](https://vtex.io/docs/app/{{{en.appVTexStore}}}) to see advanced setup instructions.",
+  "websiteURL": "https://vtex.io/docs/app/{{{en.appVTexStore}}}",
   "support": {
     "url": "https://support.vtex.com/hc/requests"
   }

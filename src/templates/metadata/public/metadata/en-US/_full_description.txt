@@ -1,11 +1,11 @@
 ## About
 
-{{fullDescriptionEnUs}}
+{{{en.fullDescription}}}
 
 ## Features
 
-{{featuresEnUs}}
+{{{en.features}}}
 
 ## Setup
 
-Please head over to the [official docs](https://vtex.io/docs/app/{{appVTexStore}}) to see advanced setup instructions.
+Please head over to the [official docs](https://vtex.io/docs/app/{{{en.appVTexStore}}}) to see advanced setup instructions.

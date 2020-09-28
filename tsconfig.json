@@ -1,4 +1,5 @@
 {
+  "compileOnSave": true,
   "compilerOptions": {
     "declaration": true,
     "importHelpers": true,
@@ -8,15 +9,7 @@
     "strict": true,
     "target": "es2017",
     "baseUrl": ".",
-    "paths": {
-      "@acct/commands/*": ["src/commands/*"],
-      "@acct/enums/*": ["src/enums/*"],
-      "@acct/handlers/*": ["src/handlers/*"],
-      "@acct/interfaces/*": ["src/interfaces/*"],
-      "@acct/services/*": ["src/services/*"],
-      "@acct/templates/*": ["src/templates/*"],
-      "@acct/utils/*": ["src/utils/*"]
-    }
+    "paths": {}
   },
   "include": ["src/**/*"]
 }

@@ -1,5 +1,6 @@
 import { Command, flags } from '@oclif/command';
-import zip from '@acct/handlers/zip/zip.handler';
+
+import zip from '../handlers/zip/zip.handler';
 
 export default class Zip extends Command {
   static description =

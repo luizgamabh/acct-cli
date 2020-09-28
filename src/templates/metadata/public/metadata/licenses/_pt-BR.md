@@ -1,16 +1,16 @@
 # TERMOS E CONDIÇÕES PADRÃO DE LICENÇA DE USO DO APLICATIVO
 
-Por estes termos e condições, o “Usuário” declara a compreensão e aceitação dos direitos e obrigações previstos nestes Termos e Condições Padrão do software {{projectTitle}} .
+Por estes termos e condições, o “Usuário” declara a compreensão e aceitação dos direitos e obrigações previstos nestes Termos e Condições Padrão do software {{{pt.projectTitle}}} .
 
-1. Este Acordo cria um contrato vinculativo entre o USUÁIO e ACCT, através do qual a ACCT concede ao USUÁRIO uma licença pessoal e intransferível de uso do software {{projectTitle}} da ACCT . O USUÁRIO declara que leu e concorda com todos os termos contidos neste acordo antes de baixar o aplicativo.
+1. Este Acordo cria um contrato vinculativo entre o USUÁIO e ACCT, através do qual a ACCT concede ao USUÁRIO uma licença pessoal e intransferível de uso do software {{{pt.projectTitle}}} da ACCT . O USUÁRIO declara que leu e concorda com todos os termos contidos neste acordo antes de baixar o aplicativo.
 
    1.1 O USUÁRIO declara estar ciente de que o aplicativo foi desenvolvido para operar na plataforma VTEX .
 
    1.2 A ACCT não se responsabiliza por qualquer incapacidade de uso ou falha de desempenho do aplicativo se operado em sistemas não recomendados acima.
 
-2. O USUÁRIO deverá utilizar o app {{projectTitle}} exclusivamente no âmbito da licença concedida, a qual poderá ser rescindida a qualquer momento pela ACCT caso haja alguma violação dos termos deste acordo.
+2. O USUÁRIO deverá utilizar o app {{{pt.projectTitle}}} exclusivamente no âmbito da licença concedida, a qual poderá ser rescindida a qualquer momento pela ACCT caso haja alguma violação dos termos deste acordo.
 
-3. A licença de uso do aplicativo é limitada ao processamento dos dados do USUÁRIO. O USUÁRIO é exclusivamente responsável por todos os dados e informações processados ou gerados dentro do aplicativo. A ACCT não se responsabiliza por quaisquer dados e informações fornecidos através do aplicativo pelo USUÁRIO e não será responsável por quaisquer danos decorrentes ou relacionados às informações fornecidas através do {{projectTitle}}.
+3. A licença de uso do aplicativo é limitada ao processamento dos dados do USUÁRIO. O USUÁRIO é exclusivamente responsável por todos os dados e informações processados ou gerados dentro do aplicativo. A ACCT não se responsabiliza por quaisquer dados e informações fornecidos através do aplicativo pelo USUÁRIO e não será responsável por quaisquer danos decorrentes ou relacionados às informações fornecidas através do {{{pt.projectTitle}}}.
 
 4. A licença contida neste acordo é exclusiva ao USUÁRIO, que não pode transferir, sublicenciar ou de qualquer forma redistribuir os direitos de uso previstos neste Acordo. O USUÁRIO poderá, sempre com consentimento expresso da ACCT, alterar a quantidade de produtos ou adquirir novas licenças de uso mediante assinatura do formulário incorporado a este Acordo.
 

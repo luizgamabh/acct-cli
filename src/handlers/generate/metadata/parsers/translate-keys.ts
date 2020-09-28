@@ -1,6 +1,6 @@
-import { MetadataReplacementKeys } from '@acct/handlers/generate/metadata/interfaces/metadata-replacement-keys.interface';
-import { AvailableLanguages } from '@acct/interfaces/available-languages.type';
-import translateTo from '@acct/utils/translate';
+import { MetadataReplacementKeys } from '../interfaces/metadata-replacement-keys.interface';
+import { AvailableLanguages } from '../../../../interfaces/available-languages.type';
+import translateTo from '../../../../utils/translate';
 
 export const translateKeys = async (
   lang: AvailableLanguages | null,
@@ -27,6 +27,7 @@ export const translateKeys = async (
       : answers.shortDescription,
   };
 
+  // eslint-disable-next-line no-console
   const output: Required<MetadataReplacementKeys> = {
     ...result,
     featuresAsJson: `"${result.features

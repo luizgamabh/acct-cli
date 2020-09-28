@@ -1,1 +1,1 @@
-export { dotfiles as default } from './dotfiles/index';
+export { default } from './dotfiles/index';
