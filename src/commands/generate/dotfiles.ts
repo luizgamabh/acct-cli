@@ -1,14 +1,18 @@
 import { Command, flags } from '@oclif/command';
-import metadata from '@acct/handlers/generate/metadata';
+import dotfiles from '@acct/handlers/generate/dotfiles';
 
-export default class Metadata extends Command {
-  static description = 'Generate VTEX Store metadata. (interactive)';
+export default class DotFiles extends Command {
+  static description = 'Generate project dotfiles.';
 
   static flags = {
     help: flags.help({ char: 'h' }),
     force: flags.boolean({
       char: 'f',
       description: 'forces rewriting existing files',
+    }),
+    interactive: flags.boolean({
+      char: 'i',
+      description: 'Interactive mode',
     }),
     dryRun: flags.boolean({
       char: 'd',
@@ -24,8 +28,8 @@ export default class Metadata extends Command {
   static args = [];
 
   async run() {
-    const { flags } = this.parse(Metadata);
-    await metadata(this)(flags);
+    const { flags } = this.parse(DotFiles);
+    await dotfiles(this)(flags);
     this.exit();
   }
 }

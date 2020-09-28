@@ -1,11 +1,11 @@
 {
-  "name": "CRM Dito",
+  "name": "{{projectTitleAsJson}}",
   "headline": "{{shortDescriptionEnUsAsJson}}",
   "overview": "{{fullDescriptionEnUsAsJson}}",
   "features": [
     {{featuresEnUsAsJson}}
   ],
-  "additionalInformation": "Consulte la [documentación de la aplicación](https://vtex.io/docs/app/acupula.ditocrm) y más detalles sobre las funciones en el [sitio web oficial Dito](https://www.dito.com.br/).",
+  "additionalInformation": "Consulte la [documentación de la aplicación](https://vtex.io/docs/app/{{appVTexStore}}).",
   "websiteURL": "https://vtex.io/docs/app/{{appVTexStore}}",
   "support": {
     "url": "https://support.vtex.com/hc/requests"

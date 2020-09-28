@@ -1,11 +1,14 @@
-import { join } from 'path';
-import * as copyCb from 'copy-template-dir';
 import { Command } from '@oclif/command';
-import { FlagsInterface } from '../../interfaces/flags.interface';
-import * as chalk from 'chalk';
+import { join } from 'path';
 import { promisify } from 'util';
+import * as copyCb from 'copy-template-dir';
+import * as chalk from 'chalk';
 import * as inquirer from 'inquirer';
-import notification from '../../utils/notification';
+import * as ora from 'ora';
+import notification from '@acct/utils/notification';
+import { FlagsInterface } from '@acct/interfaces/flags.interface';
+
+import { promptMetadata } from './prompt';
 
 const copy = promisify(copyCb);
 
@@ -18,37 +21,7 @@ const metadata = (command: Command) => async (flags: FlagsInterface) => {
     );
   }
 
-  const replacements = await inquirer.prompt([
-    {
-      name: 'projectTitle',
-      type: 'input',
-      message: 'App title:',
-    },
-    {
-      name: 'shortDescriptionEnUs',
-      type: 'input',
-      message: 'Short description (en-US):',
-    },
-    {
-      name: 'fullDescriptionEnUs',
-      type: 'editor',
-      message: 'Full description (en-US):',
-    },
-    {
-      name: 'featuresEnUs',
-      type: 'editor',
-      message: 'Features (en-US):',
-    },
-    {
-      name: 'appVTexStore',
-      type: 'input',
-      message: 'App url on vtex store',
-      suffix: ' https://vtex.io/docs/app/{app}',
-      transformer(input) {
-        return input.replace(/.*\/\s*([\w._-]+).*/g, '$1');
-      },
-    },
-  ]);
+  const replacements = await inquirer.prompt(promptMetadata);
 
   replacements.projectTitleAsJson = replacements.projectTitle.replace(
     /[\r\n\f]+/gm,
@@ -74,11 +47,14 @@ const metadata = (command: Command) => async (flags: FlagsInterface) => {
     "`
     )}"`;
 
+  const spinner = ora('Generating files').start();
+
   const inDir = join(__dirname, '../../templates/metadata');
   const outDir = process.cwd();
   await copy(inDir, outDir, replacements)
     .then(() => {
-      command.log(notification.success('Files generated'));
+      spinner.succeed('Success');
+      spinner.stop();
     })
     .catch((error: any) => {
       command.log(notification.error('Could not generate files'));

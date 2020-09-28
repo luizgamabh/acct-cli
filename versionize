@@ -1,0 +1,43 @@
+# Necessário ruby instalado na máquina local
+# Removido shebang com propósito de passar o argumento -W0 para o executável do ruby
+# Remember to setup ./.git/config with alias:
+# release = "!f() { git pull && export GIT_MERGE_AUTOEDIT=no; git flow release start $1; ([ -f ./versionize ] && `which ruby` -W0 ./versionize $1 -y); git flow release finish -m $1 $1; unset GIT_MERGE_AUTOEDIT; git push --tags; }; f"
+# Lembre de permitir execução deste aquivo
+# chmod +x ./versionize
+# By Luiz Gustavo Freire Gama
+
+puts "Changing app version to release"
+
+def prompt(*args)
+  print(*args)
+  gets
+end
+
+auto_commit = ARGV.count > 1 && ['--yes', '-y'].include?(ARGV[1])
+
+version = ARGV[0].to_s
+
+regex = /# Seguramente pega a versão do sistema
+        ("name"\:\s*"\w+",[\R\s\t\r\n\f]+"version":\s*")
+        # Elimina a versão atual
+        [\w.-]*
+        # Garante que finaliza com as aspas
+        (?=")/ix
+
+replacement = '\1' << version
+
+file_name = 'package.json'
+
+target = File.expand_path(file_name, File.dirname(__FILE__))
+
+text = File.read(target)
+
+replace = text.gsub(regex, replacement)
+
+if (text != replace) then
+  File.open(target, "w") { |file| file.puts replace }
+
+  exec("git add #{file_name} && git commit -m \"ci(release): #{version}\"")
+
+  puts "Version #{version} released"
+end

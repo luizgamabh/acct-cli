@@ -6,9 +6,24 @@
     "outDir": "lib",
     "rootDir": "src",
     "strict": true,
-    "target": "es2017"
+    "target": "es2017",
+    "baseUrl": ".",
+    "paths": {
+      "@acct/commands/": ["src/commands/index.ts"],
+      "@acct/commands/*": ["src/commands/*"],
+      "@acct/enums/": ["src/enums/index.ts"],
+      "@acct/enums/*": ["src/enums/*"],
+      "@acct/handlers/": ["src/handlers/index.ts"],
+      "@acct/handlers/*": ["src/handlers/*"],
+      "@acct/interfaces/": ["src/interfaces/index.ts"],
+      "@acct/interfaces/*": ["src/interfaces/*"],
+      "@acct/services/": ["src/services/index.ts"],
+      "@acct/services/*": ["src/services/*"],
+      "@acct/templates/": ["src/templates/index.ts"],
+      "@acct/templates/*": ["src/templates/*"],
+      "@acct/utils/": ["src/utils/index.ts"],
+      "@acct/utils/*": ["src/utils/*"]
+    }
   },
-  "include": [
-    "src/**/*"
-  ]
+  "include": ["src/**/*"]
 }
