@@ -1,5 +1,5 @@
 import { Command, flags } from '@oclif/command';
-import notification from '@acct/utils/notification';
+import { notification } from '@acct/utils/notification';
 
 export default class Generate extends Command {
   static description = 'ACCT scaffold command';

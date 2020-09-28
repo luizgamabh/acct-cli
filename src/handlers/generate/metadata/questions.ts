@@ -1,21 +1,21 @@
-export const promptMetadata = [
+export const questions = [
   {
     name: 'projectTitle',
     type: 'input',
     message: 'App title:',
   },
   {
-    name: 'shortDescriptionEnUs',
+    name: 'shortDescription',
     type: 'input',
     message: 'Short description (en-US):',
   },
   {
-    name: 'fullDescriptionEnUs',
+    name: 'fullDescription',
     type: 'editor',
     message: 'Full description (en-US):',
   },
   {
-    name: 'featuresEnUs',
+    name: 'features',
     type: 'editor',
     message: 'Features (en-US):',
   },

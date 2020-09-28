@@ -3,16 +3,14 @@ import { join } from 'path';
 import { promisify } from 'util';
 import * as copyCb from 'copy-template-dir';
 import * as chalk from 'chalk';
-import * as inquirer from 'inquirer';
 import * as ora from 'ora';
-import notification from '@acct/utils/notification';
+import { notification } from '@acct/utils/notification';
 import { FlagsInterface } from '@acct/interfaces/flags.interface';
-
-import { promptMetadata } from './prompt';
+import { getReplacements } from './parsers/replacements';
 
 const copy = promisify(copyCb);
 
-const metadata = (command: Command) => async (flags: FlagsInterface) => {
+export const metadata = (command: Command) => async (flags: FlagsInterface) => {
   const { dryRun } = flags;
 
   if (dryRun) {
@@ -21,33 +19,9 @@ const metadata = (command: Command) => async (flags: FlagsInterface) => {
     );
   }
 
-  const replacements = await inquirer.prompt(promptMetadata);
-
-  replacements.projectTitleAsJson = replacements.projectTitle.replace(
-    /[\r\n\f]+/gm,
-    ' '
-  );
-
-  replacements.shortDescriptionEnUsAsJson = replacements.shortDescriptionEnUs.replace(
-    /[\r\n\f]+/gm,
-    ' '
-  );
-
-  replacements.fullDescriptionEnUsAsJson = replacements.fullDescriptionEnUs.replace(
-    /[\r\n\f]+/gm,
-    ' '
-  );
-
-  replacements.featuresEnUsAsJson = `"${replacements.featuresEnUs
-    .replace(/^(\s*-\s*|\s*$[\r\n\f\s\t])/gm, '')
-    .split(/[\r\n]+/m)
-    .filter((line: string) => Boolean(line.trim()))
-    .join(
-      `",
-    "`
-    )}"`;
-
   const spinner = ora('Generating files').start();
+
+  const replacements = await getReplacements();
 
   const inDir = join(__dirname, '../../templates/metadata');
   const outDir = process.cwd();
@@ -63,5 +37,3 @@ const metadata = (command: Command) => async (flags: FlagsInterface) => {
 
   command.exit();
 };
-
-export default metadata;

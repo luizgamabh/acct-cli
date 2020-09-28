@@ -5,11 +5,11 @@ import * as copyCb from 'copy-template-dir';
 import * as chalk from 'chalk';
 import * as ora from 'ora';
 import { FlagsInterface } from '@acct/interfaces/flags.interface';
-import notification from '@acct/utils/notification';
+import { notification } from '@acct/utils/notification';
 
 const copy = promisify(copyCb);
 
-const dotfiles = (command: Command) => async (flags: FlagsInterface) => {
+export const dotfiles = (command: Command) => async (flags: FlagsInterface) => {
   const { dryRun } = flags;
 
   if (dryRun) {
@@ -34,5 +34,3 @@ const dotfiles = (command: Command) => async (flags: FlagsInterface) => {
 
   command.exit();
 };
-
-export default dotfiles;

@@ -15,7 +15,7 @@ const _notify = (
   );
 };
 
-const notification = {
+export const notification = {
   warn(message: string) {
     return _notify(message, 'Warning: ', NotificationColorEnum.warning);
   },
@@ -28,5 +28,3 @@ const notification = {
     return _notify(message, 'Success: ', NotificationColorEnum.success);
   },
 };
-
-export default notification;
