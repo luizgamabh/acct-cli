@@ -57,7 +57,7 @@ OPTIONS
  -n, --name=name file name
 ```
 
-_See code: [src\commands\generate.ts](https://github.com/luizgamabh/acct-cli/blob/v0.0.1/src\commands\generate.ts)_
+_See code: [src/commands/generate.ts](https://github.com/luizgamabh/acct-cli/tree/master/src/commands/generate.ts)_
 
 ## `acct zip [FILE]`
 
