@@ -72,4 +72,4 @@ OPTIONS
  -n, --name=name name to print
 ```
 
-_See code: [src\commands\zip.ts](https://github.com/luizgamabh/acct-cli/blob/v0.0.1/src\commands\zip.ts)_
+_See code: [src/commands/zip.ts](https://github.com/luizgamabh/acct-cli/tree/master/src/commands/zip.ts)_
